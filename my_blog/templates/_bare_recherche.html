@@ -1,0 +1,29 @@
+{% load static%}
+
+<div class="container">
+    <div class="row">
+      <div class="mb-3 p-3 col-10 col-md-8 col-lg-4 col-xl-4"></div>
+      <div class="mb-3 p-3 col-10 col-md-8 col-lg-4 col-xl-4"></div>
+      <div class="mb-3 p-3 col-10 col-md-8 col-lg-4 col-xl-4">
+        <form class="d-flex input-group w-auto" id="formDeRecherche" action="{% url "search" %}">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Rechercher ici"
+            aria-label="Search"
+            name="produit"
+            id="barreDeRecherche"          
+          />
+          <button
+            data-mdb-ripple-init
+            class="btn btn-outline-primary"
+            type="button"
+            data-mdb-ripple-color="dark"
+            id="boutonRechercher"
+          >
+            Recherche
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,30 @@
+{% load static %}
+
+<html>
+  <!-- HEAD -->
+    {% include "_head.html" %}
+  <!-- HEAD -->
+
+  <body>
+    <!-- HEADER -->
+    {% include "_header.html" %}
+    <!-- END HEADER -->
+
+    <!-- {% include "_bare_recherche.html" %} -->
+    <!-- MAIN BLOCK DATA PERSONNEL -->
+    {% block content %}
+    {% endblock %}
+    <!-- END MAIN BLOCK DATA PERSONNEL -->
+    
+    <!-- FOOTER  -->    
+      {% include "_footer.html" %}  
+    <!-- END FOOTER -->
+    
+  </body>
+
+    <!-- fooTBody for JS/JQUERY -->
+    <!-- MDB -->
+    <script type="text/javascript" src="{% static 'js/mdb.umd.min.js' %}"></script>
+    <!-- scripts PERSONNEL -->
+    <script type="text/javascript" src="{% static 'js\script.js' %}"></script>
+</html>

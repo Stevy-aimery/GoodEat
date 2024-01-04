@@ -1,0 +1,26 @@
+/*Mon style css*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+#navbar{
+    margin-bottom: 130px;
+}
+#logo{
+    height: 65px;
+    border-radius: 8px;
+}
+#titre{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Poppins;
+    text-transform: uppercase;
+    
+}
+
+body{
+    background-color: azure;
+}
+
+.banner{
+    height: 200px;        
+}
+#footer{
+    background-color: rgb(195, 240, 240);
+}

@@ -1,0 +1,160 @@
+{% load static %}
+<div id="navbar">
+  <nav
+    class="navbar navbar-expand-lg fixed-top navbar-light bg-body-tertiary"
+    
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static "img/GoodEat_Mylogo.png" %}" alt="Logo" id='logo'
+        loading="lazy" />
+      </a>
+      <button
+        data-mdb-collapse-init
+        class="navbar-toggler"
+        height="60"
+        type="button"
+        data-mdb-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="{% url 'home' %}"
+              >Accueil</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Apropos' %}">A propos</a>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              data-mdb-dropdown-init
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              aria-expanded="false"
+            >
+              Mon compte
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="#">Action</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Another action</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!--Bar de recherche
+      <form class="d-flex input-group w-auto" action="https://www.google.com/" method='GET'>
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Rechercher ici"
+          aria-label="Search"
+        />
+        <button
+          data-mdb-ripple-init
+          class="btn btn-outline-primary"
+          type="button"
+          data-mdb-ripple-color="dark"
+        >
+          Recherche
+        </button>
+      </form>   -->
+
+        <!--compte user-->
+        <div class="d-flex align-items-center">
+          <button
+            data-mdb-ripple-init
+            type="button"
+            class="btn btn-link px-3 ms-3 me-2"
+          >
+            Se connecter
+          </button>
+          <button
+            data-mdb-ripple-init
+            type="button"
+            class="btn btn-primary me-3"
+          >
+            Inscription
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- <section  class="banner">
+    <img src="{% static "img/img_banner/composition-delicious-fresh-vege.png" %}" alt="" class='banner'>
+  
+</section> -->
+
+<!-- <ul class="navbar-nav">
+        //Avatar 
+        <li class="nav-item dropdown"> 
+          <a
+            data-mdb-dropdown-init
+            class="nav-link dropdown-toggle d-flex align-items-center"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            aria-expanded="false"
+          >
+           <div class="d-flex align-items-center">
+        <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
+          Login
+        </button>
+        <button data-mdb-ripple-init type="button" class="btn btn-primary me-3">
+          Sign up for free
+        </button>
+        <a
+          data-mdb-ripple-init
+          class="btn btn-dark px-3"
+          href="https://github.com/mdbootstrap/mdb-ui-kit"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+              class="rounded-circle"
+              height="40"
+              alt="Portrait of a Woman"
+              loading="lazy"
+            />
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <a class="dropdown-item" href="#">My profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul> -->

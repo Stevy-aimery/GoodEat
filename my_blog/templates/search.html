@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{%load static%}
+
+{% block content %}
+<div class="container">
+    <h3>Resultats de la recherche</h3>
+    {% for prod in list_produits_trouver  %}
+    {%if prod.id != produit.id %}
+        <div class="row">
+                <div class='col-md-4 text-center'>
+                    <a href="{% url 'detail' prod.id %}">
+                        <img src="{{prod.image.url}}" alt="Produit {{produit.id}}" height="245" class='my-2' />
+                    </a>
+                </div>
+                <div class='col-md-6 mt-2'>
+                    <a href="{% url 'detail' prod.id %}">
+                        <h5 class="card-title text-info font-weight-bolder">{{prod}}</h5>
+                    </a>
+                    <p class="">
+                        {{prod.desc | truncatewords:15}} <br /><br />
+                        Publié il y'a {{prod.created_add|timesince}}
+                    </p>
+                    <a
+                        href="{% url 'detail' prod.id %}"
+                        class="btn btn-primary"
+                        data-mdb-ripple-init
+                        >
+                        Voir plus
+                    </a >
+                </div>
+                <div class='col-md-2 mt-2'>
+                    <h3> Hello </h3>
+                </div>
+            </div>
+            <hr>
+            {% endif %}
+    {% endfor %}
+</div>
+{% endblock  %}
+
+
