@@ -10,7 +10,9 @@
     {% include "_header.html" %}
     <!-- END HEADER -->
 
-    <!-- {% include "_bare_recherche.html" %} -->
+    <!-- Bar de Recherche -->
+    {% include "_bare_recherche.html" %}
+
     <!-- MAIN BLOCK DATA PERSONNEL -->
     {% block content %}
     {% endblock %}
@@ -26,5 +28,5 @@
     <!-- MDB -->
     <script type="text/javascript" src="{% static 'js/mdb.umd.min.js' %}"></script>
     <!-- scripts PERSONNEL -->
-    <script type="text/javascript" src="{% static 'js\script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </html>

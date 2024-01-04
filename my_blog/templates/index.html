@@ -1,8 +1,13 @@
-{% extends 'base.html'%}
+
 {% load static%}
-
-
-{% block content %}
+<html>
+  <!-- HEAD -->
+    {% include "_head.html" %}
+  <!-- HEAD -->
+<body>
+    <!-- HEADER -->
+    {% include "_header.html" %}
+    <!-- END HEADER -->
 
 <!-- Titre -->
 <div id="titre">
@@ -72,4 +77,13 @@
   </div>
 </div>
 
-{% endblock %}
+<!-- FOOTER  -->    
+{% include "_footer.html" %}  
+<!-- END FOOTER -->
+</body>
+  <!-- fooTBody for JS/JQUERY -->
+    <!-- MDB -->
+    <script type="text/javascript" src="{% static 'js/mdb.umd.min.js' %}"></script>
+    <!-- scripts PERSONNEL -->
+    <script type="text/javascript" src="{% static 'js\script.js' %}"></script>
+</html>
