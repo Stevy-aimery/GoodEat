@@ -25,6 +25,7 @@ urlpatterns = [
     path('', home, name="home"), #root for http://127.0.0.1:8000/
     path('contact/', contact, name="contact"),
     path('Apropos/', Apropos, name="Apropos"),
+    path('authentification/', include("app_auth.urls")),
     path("produit/<int:id_produit>", detail, name="detail"),
     path("produit/recherche", search, name="search"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
