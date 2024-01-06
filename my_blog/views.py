@@ -20,7 +20,7 @@ def search(resquest):
 def contact(resquest):    
     return render(resquest, 'contact.html')
 def Apropos(resquest):    
-    return render(resquest, 'Apropos.html')
+    return render(resquest, 'Apropos.html') 
 
 '''
 def search(resquest,recherche):

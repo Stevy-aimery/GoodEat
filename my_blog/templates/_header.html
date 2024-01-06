@@ -86,20 +86,24 @@
 
         <!--compte user-->
         <div class="d-flex align-items-center">
-          <button
+          <a class="nav-link" href="{% url 'login-blog' %}">
+            <button
             data-mdb-ripple-init
             type="button"
             class="btn btn-link px-3 ms-3 me-2"
-          >
+          > 
             Se connecter
           </button>
+          </a>
+          <a class="nav-link" href="{% url 'signup-blog' %}">
           <button
             data-mdb-ripple-init
             type="button"
-            class="btn btn-primary me-3"
+            class="btn btn-primary me-3" 
           >
             Inscription
           </button>
+        </a>
         </div>
       </div>
     </div>
