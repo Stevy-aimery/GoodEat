@@ -21,14 +21,23 @@
                       {% endfor %}
                       {% endif %}
                     <!-- </div> -->
-                    <form class="form" method="POST" action="">{% csrf_token %}
-                      <!-- <div>
-                      <i class="fas fa-user"></i>
-                      </div>      -->
-                      
-                      {% comment %} <input type="email" class="input form-control" value="" name="email" required placeholder="Email" />                 {% endcomment %}
-                      <input type="text" class="input form-control" value="" name="username" required placeholder="Nom d'utilisateur" />                
-                      <input type="password" class="input form-control" value="" name="pwd" required placeholder="Mot de passe" />
+                    <form class="form" method="POST" action="" novalidate>{% csrf_token %}
+                      <!-- Partie champs du formulaire gener par Django -->
+                          <!-- <label for="id_usename">Nom d'utilsateur</label> -->
+                            {% if form.username.errors %}
+                            {% for error in form.username.errors %}
+                            <small class="text-danger">{{error}}</small>                            
+                            {% endfor %}
+                            {% endif %}
+                            {{form.username}}
+
+                            {% if form.pwd.errors %}
+                            {% for error in form.pwd.errors %}
+                            <small class="text-danger">{{error}}</small>                            
+                            {% endfor %}
+                            {% endif %}
+                            {{form.pwd}}
+                      <!-- Fin Partie champs du formulaire -->
                       <p class="page-link">
                         <span class="page-link-label">Mot de passe oublié?</span>
                       </p>
