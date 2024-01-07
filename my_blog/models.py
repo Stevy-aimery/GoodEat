@@ -5,7 +5,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
+ 
 class Produit(models.Model):
     # models.CharField : Chaine de caratere = varchar
     

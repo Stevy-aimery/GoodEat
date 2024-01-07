@@ -1,4 +1,5 @@
 from django.shortcuts import render
+# from django.db.models.functions import Unaccent
 from .models import Produit 
 
 def home(resquest):
@@ -14,13 +15,13 @@ def detail(resquest, id_produit):
 
 def search(resquest):
     query = resquest.GET["produit"]
-    list_produits_trouver = Produit.objects.filter(title__icontains=query)
+    list_produits_trouver = Produit.objects.filter(desc__icontains=query)
     return render(resquest, 'search.html', {"list_produits_trouver":list_produits_trouver} )
 
 def contact(resquest):    
     return render(resquest, 'contact.html')
 def Apropos(resquest):    
-    return render(resquest, 'Apropos.html') 
+    return render(resquest, 'Apropos.html')  
 
 '''
 def search(resquest,recherche):

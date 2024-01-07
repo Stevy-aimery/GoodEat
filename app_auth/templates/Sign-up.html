@@ -14,11 +14,11 @@
                 </div>
                     <p class="title">Créer un compte</p>
 
-                    <form class="form">
-                      <input type="text" class="input" required placeholder="Nom" />
-                      <input type="text" class="input" placeholder="Prénom" />
-                      <input type="email" class="input" placeholder="Email" />
-                      <input type="password" class="input" placeholder="Mot de passe" />
+                    <form class="form" action="" method="post"> {% csrf_token %}
+                      <input type="text" class="input form-control" name="nom" value="" required placeholder="Nom" />
+                      <input type="text" class="input form-control" name="prenom" value="" placeholder="Prénom" />
+                      <input type="email" class="input form-control" name="email" value="" placeholder="Email" />
+                      <input type="password" class="input form-control" name="pwd" value="" placeholder="Mot de passe" />
                       
                       <button class="form-btn">Enregistrer</button>
                     </form>
