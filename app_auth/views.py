@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login
 from django.contrib import messages
 from .forms import LoginForm
 
@@ -13,14 +13,14 @@ def login_blog(request):
             pwd = form.cleaned_data['pwd']
             user = authenticate(username=username, password=pwd)
             if user is not None:
-                return redirect("home")
-            # return redirect("Sign-up.html Apropos")
+                login(request,user) # fonction qui stock l'utilsateur dans l'object request
+                return redirect("user_connecter")
             else:
                 messages.error(request,"Echec d'authentification")
                 return render(request,"login.html",{"form":form})
         else:
             for field in form.errors:
-                form[field].field.widget.attrs['class'] += ' is-invalid'
+                form[field].field.widget.attrs['class'] += 'is-invalid'
             return render(request,"login.html",{"form":form})
 
    else:

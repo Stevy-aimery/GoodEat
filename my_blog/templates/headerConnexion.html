@@ -33,10 +33,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Admin</a>
-          </li>
-          {% comment %} <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">contact</a>
-          </li> {% endcomment %}
+          </li>          
           <li class="nav-item">
             <a class="nav-link" href="{% url 'Apropos' %}">A propos</a>
           </li>
@@ -64,15 +61,25 @@
               </li>
             </ul>
           </li>
-        </ul>
-      </div>
-      
-
+        </ul>     
 
         <!--compte user-->
+        {% if user.is_authenticated %}  
         
-       
-        <div class="d-flex align-items-center">
+        {% comment %} <div> {% endcomment %}        
+          <a class="nav-link" href="{% url 'home' %}">
+            <button
+            data-mdb-ripple-init
+            type="button"
+            class="btn btn-link px-3 ms-3 me-2"
+          > 
+            Deconnexion
+          </button>
+          </a>
+        {% comment %} </div> {% endcomment %}
+        
+        {% else %}
+        <div>
           <a class="nav-link" href="{% url 'login-blog' %}">
             <button
             data-mdb-ripple-init
@@ -82,16 +89,11 @@
             Se connecter
           </button>
           </a>
-          <a class="nav-link" href="{% url 'signup-blog' %}">
-          <button
-            data-mdb-ripple-init
-            type="button"
-            class="btn btn-primary me-3" 
-          >
-            Inscription
-          </button>
-        </a>
-      </div>     
-    
+        </div>
+
+        {% endif %}
+
+      </div>
+    </div>
   </nav>
 </div>

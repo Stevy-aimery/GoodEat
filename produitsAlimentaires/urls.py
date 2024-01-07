@@ -18,12 +18,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path,include
-from my_blog.views import home,detail,search,contact,Apropos
+from my_blog.views import home,detail,search,userConnecter,Apropos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"), #root for http://127.0.0.1:8000/
-    path('contact/', contact, name="contact"),
+    path('page_user/', userConnecter, name="user_connecter"),
     path('apropos/', Apropos, name="Apropos"),
     path('authentification/', include("app_auth.urls")),
     path('enregistrer/', include("app_auth.urls")),

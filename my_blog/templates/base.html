@@ -7,7 +7,8 @@
 
   <body>
     <!-- HEADER -->
-    {% include "_header.html" %}
+    {% comment %} {% include "_header.html" %} {% endcomment %}
+    {% include "headerConnexion.html" %}
     <!-- END HEADER -->
 
     <!-- Bar de Recherche -->
@@ -24,13 +25,13 @@
 
     <!-- fooTBody for JS/JQUERY -->
     <!-- MDB -->
-    <script type="text/javascript" src="{% static 'js/mdb.es.min.js' %}"></script>    
+    <script type="text/javascript" src="{% static 'js/jquery-3.7.1.min.js' %}"></script>    
     <script type="text/javascript" src="{% static 'js/mdb.umd.min.js' %}"></script>    
 
     <!-- scripts PERSONNEL -->
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
-    {% block scripts %}
+    {% block scriptJS %}
     {% endblock %}
     
   </body>

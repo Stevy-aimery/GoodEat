@@ -24,7 +24,6 @@
                     <form class="form needs-validation" method="POST" action="" novalidate>{% csrf_token %}
                       <!-- Partie champs du formulaire gener par Django -->
                          
-                          <!-- <input type="email" class="input form-control" value="" name="email" required placeholder="Email" /> -->
                             {% if form.username.errors %}
                             {% for error in form.username.errors %}
                             <div class="div-error-{{form.username.name}}">
@@ -115,21 +114,29 @@
     </div>
 
 {% endblock %}
-
-{% block scripts %}
+<!-- 
+{% block scriptJS %}
 <script>
   $(document).ready(function(){
     $('input').keyup(function(){
       let textSaisi = $(this).val();
+      let attrName = $(this).attr(name);
+      let validatorElement = ".div-error-"+attrName;
+
       if (textSaisi ===""){
           if(!$(this).hasClass('is-invalid')){
             $(this).addClass('is-invalid');
-          } else{
-            $(this).removeClass('is-invalid');
-          }          
-      }
-      
+
+            $(validatorElement).show();
+          }
+        } else {
+          $(this).removeClass('is-invalid');
+          
+          $(validatorElement).hide();
+        }
+
     })
 })
 </script>
-{% endblock %}
+{% endblock %} -->
+

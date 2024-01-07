@@ -18,13 +18,7 @@ def search(resquest):
     list_produits_trouver = Produit.objects.filter(desc__icontains=query)
     return render(resquest, 'search.html', {"list_produits_trouver":list_produits_trouver} )
 
-def contact(resquest):    
-    return render(resquest, 'contact.html')
+def userConnecter(resquest):    
+    return render(resquest, 'user_connecter.html')
 def Apropos(resquest):    
     return render(resquest, 'Apropos.html')  
-
-'''
-def search(resquest,recherche):
-    var_rech = Produit.objects.get(rech=recherche)
-    return render(resquest, 'search.html',{'recherche':var_rech})
-'''
