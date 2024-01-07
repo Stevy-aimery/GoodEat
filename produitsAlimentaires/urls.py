@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"), #root for http://127.0.0.1:8000/
     path('contact/', contact, name="contact"),
-    path('Apropos/', Apropos, name="Apropos"),
+    path('apropos/', Apropos, name="Apropos"),
     path('authentification/', include("app_auth.urls")),
     path('enregistrer/', include("app_auth.urls")),
     path("produit/<int:id_produit>", detail, name="detail"),
