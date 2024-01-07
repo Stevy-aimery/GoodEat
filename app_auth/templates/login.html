@@ -21,19 +21,24 @@
                       {% endfor %}
                       {% endif %}
                     <!-- </div> -->
-                    <form class="form" method="POST" action="" novalidate>{% csrf_token %}
+                    <form class="form needs-validation" method="POST" action="" novalidate>{% csrf_token %}
                       <!-- Partie champs du formulaire gener par Django -->
-                          <!-- <label for="id_usename">Nom d'utilsateur</label> -->
+                         
+                          <!-- <input type="email" class="input form-control" value="" name="email" required placeholder="Email" /> -->
                             {% if form.username.errors %}
                             {% for error in form.username.errors %}
-                            <small class="text-danger">{{error}}</small>                            
+                            <div class="div-error-{{form.username.name}}">
+                              <small class="text-danger">{{error}}</small>
+                            </div>
                             {% endfor %}
                             {% endif %}
                             {{form.username}}
 
                             {% if form.pwd.errors %}
                             {% for error in form.pwd.errors %}
-                            <small class="text-danger">{{error}}</small>                            
+                            <div class="div-error-{{form.pwd.name}}">                         
+                              <small class="text-danger">{{error}}</small> 
+                            </div>
                             {% endfor %}
                             {% endif %}
                             {{form.pwd}}
@@ -41,7 +46,7 @@
                       <p class="page-link">
                         <span class="page-link-label">Mot de passe oublié?</span>
                       </p>
-                      <button class="form-btn">Connexion</button>
+                      <button class="form-btn" type="submit">Connexion</button>
                     </form>
                     <p class="sign-up-label">
                       Je n'ai pas de compte?<span class="sign-up-link">S'enregistrer</span>
@@ -109,4 +114,22 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+  $(document).ready(function(){
+    $('input').keyup(function(){
+      let textSaisi = $(this).val();
+      if (textSaisi ===""){
+          if(!$(this).hasClass('is-invalid')){
+            $(this).addClass('is-invalid');
+          } else{
+            $(this).removeClass('is-invalid');
+          }          
+      }
+      
+    })
+})
+</script>
 {% endblock %}

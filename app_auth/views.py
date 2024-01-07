@@ -16,9 +16,11 @@ def login_blog(request):
                 return redirect("home")
             # return redirect("Sign-up.html Apropos")
             else:
-                messages.error(request,"Erreur d'authentification")
+                messages.error(request,"Echec d'authentification")
                 return render(request,"login.html",{"form":form})
         else:
+            for field in form.errors:
+                form[field].field.widget.attrs['class'] += ' is-invalid'
             return render(request,"login.html",{"form":form})
 
    else:

@@ -21,12 +21,18 @@
     <!-- FOOTER  -->    
       {% include "_footer.html" %}  
     <!-- END FOOTER -->
-    
-  </body>
 
     <!-- fooTBody for JS/JQUERY -->
     <!-- MDB -->
-    <script type="text/javascript" src="{% static 'js/mdb.umd.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mdb.es.min.js' %}"></script>    
+    <script type="text/javascript" src="{% static 'js/mdb.umd.min.js' %}"></script>    
+
     <!-- scripts PERSONNEL -->
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+    
+  </body>
+
 </html>
