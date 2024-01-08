@@ -24,3 +24,8 @@ body{
 #footer{
     background-color: rgb(195, 240, 240);
 }
+
+.btn-custom-deep-orange {
+    background-color: #FF5722; /* Remplacez cela par la couleur souhaitée */
+    color: #fff; /* Couleur du texte */
+}
