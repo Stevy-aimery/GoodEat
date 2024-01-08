@@ -48,8 +48,9 @@
                       <button class="form-btn" type="submit">Connexion</button>
                     </form>
                     <p class="sign-up-label">
-                      Je n'ai pas de compte?<span class="sign-up-link">S'enregistrer</span>
+                      Je n'ai pas de compte? <a class="sign-up-link" href="{% url 'signup-blog' %}" >S'enregistrer</a>
                     </p>
+                    {% comment %} href="{% url 'signup-blog' %}" signup-blog {% endcomment %}
                     <div class="buttons-container">
                       <div class="apple-login-button">
                         <svg

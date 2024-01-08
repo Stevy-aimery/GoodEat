@@ -1,7 +1,9 @@
-{% extends "base_without_search.html" %} {% load static %} {% comment %} partie de connexion {%
-    endcomment %} {% block titlle %} connexion au site GoodEat {% endblock titlle %}
-    {% comment %} partie du formulaire {% endcomment %} {% block content %}
-    {% comment %} <h3>Connecter vous</h3> {% endcomment %}
+{% extends "base_without_search.html" %} {% load static %} 
+ {% block titlle %} création de compte user GoodEat {% endblock titlle %}
+    
+ {% comment %} partie du formulaire {% endcomment %}     
+  {% block content %}
+    
     <div class="container mb-5">
         <div class="row">
             <div class="col- col-md-4"></div>
@@ -14,17 +16,44 @@
                 </div>
                     <p class="title">Créer un compte</p>
 
-                    <form class="form" action="" method="post"> {% csrf_token %}
-                      <input type="text" class="input form-control" name="nom" value="" required placeholder="Nom" />
-                      <input type="text" class="input form-control" name="prenom" value="" placeholder="Prénom" />
-                      <input type="email" class="input form-control" name="email" value="" placeholder="Email" />
-                      <input type="password" class="input form-control" name="pwd" value="" placeholder="Mot de passe" />
+                    <form class="form" action="" method="post" novalidate> {% csrf_token %}
+                      {% if form.username.errors %}
+                            {% for error in form.username.errors %}
+                            <div class="div-error">
+                              <small class="text-danger">{{error}}</small>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                            {{form.username}}
+
+                            {% if form.pwd.errors %}
+                            {% for error in form.pwd.errors %}
+                            <div class="div-error">                         
+                              <small class="text-danger">{{error}}</small> 
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                            {{form.pwd}}
+
+                            {% if form.comfirmPwd.errors %}
+                            {% for error in form.comfirmPwd.errors %}
+                            <div class="div-error">                         
+                              <small class="text-danger">{{error}}</small> 
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                            {{form.comfirmPwd}}    
+                      
+                     
+                      
+
                       
                       <button class="form-btn">Enregistrer</button>
                     </form>
                     <p class="sign-up-label">
-                      Avez-vous déjà un compte ?<span class="sign-up-link">Se connecter</span>
+                      Avez-vous déjà un compte ?<a class="sign-up-link" href="{% url 'login-blog' %}" >Se connecter</a>
                     </p>
+
                     <div class="buttons-container">
                       <div class="apple-login-button">
                         <svg
