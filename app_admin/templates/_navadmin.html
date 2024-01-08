@@ -1,0 +1,51 @@
+{% load static %}
+
+<div id="navbar">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'img/GoodEat_Mylogo.png' %}" alt="Logo" id="logo" loading="lazy" />
+      </a>
+      <button data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo02" class="navbar-toggler" type="button"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'my-produits' %}">Mes articles</a>
+            {% comment %} <a class="nav-link" href="">Mes articles</a> {% endcomment %}
+          </li>
+        </ul>
+
+        <!-- Mon compte -->
+        <div class="me-5">
+          {% if user.is_authenticated %}
+          <p>User connecté : {{ user.username }}</p>
+          {% else %}
+          <!-- Code destiné aux utilisateurs non authentifiés -->
+          <p>User non connecté </p>
+          {% endif %}
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="d-flex align-items-center mx-4">
+          <a class="nav-link " href="#" id="" role="button" data-mdb-toggle="" aria-expanded="false">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </div>
+        {% else %}
+        <div class="d-flex align-items-center mx-4">
+          <a class="nav-link " href="{% url "dashboard" %}" id="" role="button" data-mdb-toggle="" aria-expanded="false">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+</nav>
+</div>

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path,include
-from my_blog.views import home,detail,search,userConnecter,Apropos
+from my_blog.views import home,detail,search,userConnecter,Apropos,user_articles
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +29,9 @@ urlpatterns = [
     path('enregistrer/', include("app_auth.urls")),
     path("produit/<int:id_produit>", detail, name="detail"),
     path("produit/recherche", search, name="search"),
+    # path("produit/", user_articles, name="user-articles"),
+    path('my-admin/', include("app_admin.urls")),
+    # path('my-produits', include("app_admin.urls")),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  
  

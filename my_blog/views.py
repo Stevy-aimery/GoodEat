@@ -22,3 +22,8 @@ def userConnecter(resquest):
     return render(resquest, 'user_connecter.html')
 def Apropos(resquest):    
     return render(resquest, 'Apropos.html')  
+
+
+def user_articles(request):
+    list_produits = Produit.objects.filter(user=request.user)
+    return render(request, 'my-produits.html', {'liste_produits': list_produits})
