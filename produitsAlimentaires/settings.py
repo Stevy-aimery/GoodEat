@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'my_blog',
     'django_extensions',
     'app_auth',
+    'app_admin',
 ]
 
 MIDDLEWARE = [

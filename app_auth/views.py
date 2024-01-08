@@ -23,7 +23,7 @@ def login_blog(request):
                 return render(request,"login.html",{"form":form})
         else:
             for field in form.errors:
-                form[field].field.widget.attrs['class'] += 'is-invalid'
+                form[field].field.widget.attrs['class'] += ' is-invalid'
             return render(request,"login.html",{"form":form})
 
    else:
@@ -37,13 +37,19 @@ def signup_blog(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             pwd = form.cleaned_data['pwd']
-            # comfirmPwd  = form.cleaned_data['comfirmPwd']
-            user = User.objects.create_user(username=username, password=pwd)
-            if user is not None:
-                return redirect("login-blog")
+            comfirmPwd  = form.cleaned_data['comfirmPwd']
+            if pwd == comfirmPwd :
+                user = User.objects.create_user(username=username, password=pwd)
+                if user is not None:
+                    return redirect("login-blog")
+                else:
+                    messages.error(request,"Echec de la création du compte")
+                    return render(request,"Sign-up.html",{"form":form})
             else:
-                messages.error(request,"Echec de la création du compte")
+                messages.error(request,"Comfirmer le meme mot de passe ")
                 return render(request,"Sign-up.html",{"form":form})
+                # return redirect("home")
+            
         else:
             return render(request,"Sign-up.html",{"form":form}) 
 

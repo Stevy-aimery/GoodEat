@@ -64,7 +64,7 @@
 
         {% if user.is_authenticated %}
         <!-- Code destiné aux utilisateurs authentifiés -->
-        <p>Utilisateur connecté : {{ user.username }}</p>     
+        <p>User connecté : {{ user.username }}</p>     
 
         <a class="nav-link" href="{% url 'logout-blog' %}">
           <button
@@ -78,7 +78,7 @@
 
         {% else %}
         <!-- Code destiné aux utilisateurs non authentifiés -->
-        <p>Utilisateur non connecté</p>
+        <p>User non connecté</p>
         <!--compte user-->
         <div class="d-flex align-items-center">
           <a class="nav-link" href="{% url 'login-blog' %}">

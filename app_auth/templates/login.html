@@ -115,29 +115,29 @@
     </div>
 
 {% endblock %}
-<!-- 
+
+
 {% block scriptJS %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
   $(document).ready(function(){
     $('input').keyup(function(){
       let textSaisi = $(this).val();
-      let attrName = $(this).attr(name);
+      let attrName = $(this).attr('name');
       let validatorElement = ".div-error-"+attrName;
 
-      if (textSaisi ===""){
+      if (textSaisi === ""){
           if(!$(this).hasClass('is-invalid')){
             $(this).addClass('is-invalid');
-
             $(validatorElement).show();
           }
         } else {
           $(this).removeClass('is-invalid');
-          
           $(validatorElement).hide();
         }
-
     })
-})
+  });
 </script>
-{% endblock %} -->
+{% endblock %}
+
 
