@@ -15,6 +15,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Accueil</a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'my-produits' %}">Mes articles</a>
             {% comment %} <a class="nav-link" href="">Mes articles</a> {% endcomment %}
@@ -23,7 +24,7 @@
 
         <!-- Mon compte -->
         <div class="me-5">
-          {% if user.is_authenticated %}
+          
           <p>User connecté : {{ user.username }}</p>
           {% else %}
           <!-- Code destiné aux utilisateurs non authentifiés -->
@@ -33,7 +34,7 @@
 
         {% if user.is_authenticated %}
         <div class="d-flex align-items-center mx-4">
-          <a class="nav-link " href="#" id="" role="button" data-mdb-toggle="" aria-expanded="false">
+          <a class="nav-link " href="{% url 'logout-blog' %}" id="" role="button" data-mdb-toggle="" aria-expanded="false">
             <i class="fas fa-sign-out-alt"></i>
           </a>
         </div>
