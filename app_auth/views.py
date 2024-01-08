@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import *
+# from app_admin.views import dashboard
 
 # Create your views here.
 
@@ -15,7 +16,7 @@ def login_blog(request):
             user = authenticate(username=username, password=pwd)
             if user is not None:
                 login(request,user) # fonction qui stock l'utilsateur dans l'object request
-                return redirect("user_connecter")
+                return redirect("dashboard")
                 # context = {'user': request.user}
                 # return render(request, 'user_connecter.html', context)
             else:
